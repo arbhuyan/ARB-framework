@@ -101,6 +101,7 @@ template {
 
 a {
   background-color: transparent;
+  outline: 0;
 }
 
 /**
@@ -223,7 +224,6 @@ figure {
  */
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -370,9 +370,7 @@ input[type="number"]::-webkit-outer-spin-button {
  */
 
 input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
+  -webkit-appearance: textfield; /* 1 */ /* 2 */
   box-sizing: content-box;
 }
 
@@ -446,8 +444,6 @@ th {
 --------------------------------------------------------------*/
 
 *, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .container {
@@ -488,7 +484,7 @@ th {
     width: 31.33%;
 }
 .col-5 {
-    width: 39.68%;
+    width: 39.67%;
 }
 .col-6 {
     width: 48%;
@@ -541,7 +537,6 @@ th {
 .nav-menu li a {
     text-decoration: none;
     display: block;
-    padding: 10px;
 }
 .sub-menu {
     float: left;
@@ -556,7 +551,6 @@ th {
     width: 100%;
 }
 .sub-menu li a {
-    color: #e5e5e5;
 	display: block;
 }
 .sub-menu .child-menu {
@@ -575,21 +569,35 @@ th {
 .nav-menu li:hover .sub-menu, .sub-menu li:hover .child-menu {
     left: 0;
 }
-.nav-menu > li > a::after {
-    content: " +";
-}
 .nav-menu>li>a:only-child:after {
     content: '';
 }
 
 #collapse {
-    color: #dcdcdc;
     display: block;
-    font-size: 16px;
-    padding: 10px 15px;
     text-decoration: none;
     display: none;
     text-align: right;
+}
+
+.nav-menu > select {
+	display: none;
+}
+
+/* form-group css */
+
+.form-group {
+    text-align: left;
+    display: block;
+    margin-bottom: 20px;
+}
+.form-group .form-control, .form-group label {
+    display: block;
+    margin: 10px 0;
+}
+.form-group input, .form-group textarea {
+    padding: 7px;
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -600,6 +608,34 @@ th {
 * Standard less (full featured coming soon)
 *******************************************
 */
+@media (min-width: 768px){
+	.nav-menu li {
+		min-width: 60px;
+	}
+	.nav-menu li a {
+		color: #333;
+		padding: 12px 12px;
+		display: block;
+		text-align: center;
+	}
+	.nav-menu > li > a::after {
+		content: " \25bc";
+		font-size: 12px;
+		color: #555;
+	}
+	.sub-menu {
+		z-index: 9;
+	}
+	.sub-menu li {
+		padding: 5px 7px;
+		width: 220px;
+	}
+	.sub-menu li a {
+		padding: 10px 7px;
+		text-align: left;
+	}
+}
+
 @media (max-width: 767px){
 	.row, [class*="col-"] {
 		float: none;
@@ -611,6 +647,9 @@ th {
 	}
 	.container [class*="col-"] {
 		margin: 0 auto;
+		width: 95%;
+	}
+	.container {
 		width: 95%;
 	}
 	[class*="col-"] {
@@ -625,22 +664,58 @@ th {
 	/* Nav-menu */
 	.nav-menu {
 		display: none;
+		width: 100%;
 	}
 	#collapse {
 		display: block;
 	}
 	.nav-menu li, .sub-menu li, .child-nav li {
 		display: block;
-		text-align: center;
+		text-align: left;
 		width: 100%;
+		margin: 0;
+		float: none;
 	}
 	.sub-menu {
 		left: 0;
 		width: 100%;
 		position: relative;
+		float: none;
+	}
+	.nav-menu li a {
+		padding: 5px;
 	}
 	.show_nav {
 		display: block;
+		border-top: 1px solid #333;
+		margin-top: 20px;
 	}
+} /* end of css*/
 
+@media (max-width: 620px) {
+	.nav-menu {
+		display: block;
+		margin: 0 auto;
+	}
+	.nav-menu li {
+		display: none;
+	}
+	#collapse {
+		display: none;
+	}
+	.sitename {
+		float: none;
+		display: block;
+		text-align: center;
+	}
+	.nav-menu select {
+		text-align: center;
+		width: 100%;
+		display: block;
+		margin: 10px 0;
+		padding: 5px 0;
+	}
+	.show_nav {
+		display: none;
+	}
 }

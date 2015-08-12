@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ARB Css grid</title>
+		
+		<!-- Main Css Files -->
+		<link rel="stylesheet" href="css/arb_grid.css">
+		<link rel="stylesheet" href="style.css">
+		
+		<!-- favicon icon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+	</head>
+	<body>
+		
+		<!-- Start wrapper -->	
+		<header class="nav-top header" id="nav">
+			<div class="container">
+				<div class="row">
+					<nav class="navbar">
+						<a href="#" id="collapse">Menu</a>
+						<ul class="nav-menu">
+							<li><a href="#home">Home</a></li>
+							<li><a href="#sections">Basics</a>
+								<ul class="sub-menu">
+									<li><a href="#item-1">Adding files</a></li>
+									<li><a href="#item-2">Grid system</a></li>
+									<li><a href="#item-3">3rd party</a></li>
+								</ul>
+							</li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav> <!-- End .nav-ul -->
+				</div> <!-- End .row -->
+			</div> <!-- End .container -->
+		</header> <!-- End .header -->
+
+		<section class="container" id="home">
+			<div class="row">
+				<article class="col-12" id="item-1">
+					<h2>Basic Usage Instructions</h2>
+					<p>1. Download arb framework package. unzip it to your desired folder and follow the steps to get started.</p>
+					<p>2. add <code>&lt;link rel="stylesheet" href="css/arb_grid.css"&gt;</code> before </head> tag.</p>
+					<p>3. add <code>&lt;script src="js/arb_min.js"&gt;&lt;/script&gt;</code> before body tag. ( Make sure you call latest jquery before calling js/arb_min.js )</p>
+					<p>4. Basic layout style: <br/>
+						<blockquote>
+							&lt;div class="container"&gt;<br/>
+								&nbsp; &nbsp; &nbsp; &lt;div class="row"&gt;<br/>
+									&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="col-12"&gt;<br/>
+										&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Here your codes<br/>
+									&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br/>
+								&nbsp; &nbsp; &nbsp; &lt;/div&gt;<br/>
+							&lt;/div&gt;<br/>
+						</blockquote>
+					</p>
+					<p>5. Navigation: <br/>
+						<blockquote>
+							&lt;nav class="navbar">
+								&nbsp; <a href="#" id="collapse">Menu</a><br/>
+									&nbsp; &nbsp; &lt;ul class="nav-menu"&gt;<br/>
+										&nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;<br/>
+										&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="#sections"&gt;Basics&lt;/a&gt;<br/>
+											&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class="sub-menu"&gt;<br/>
+												&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="#item-1"&gt;Adding files&lt;/a&gt;&lt;/li&gt;<br/>
+											&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;<br/>
+										&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;<br/>
+									&nbsp; &nbsp; &lt;/ul&gt;<br/>
+							&lt;/nav&gt; <!-- End .nav-ul -->
+						</blockquote>
+					</p>
+					<p>Notes: Use <span>.nav-menu</span> class for navigation menu list and <span>#collapse</span> id for responsive menu link. you can also use <span>.sub-menu</span> class to add dropdown menu and <span>.navbar-fixed</span> class to fixed menu to your navigation list.</p>
+				</article>
+			</div> <!-- End .row -->
+		</section> <!-- End .container -->
+		
+		<section class="container">
+			<div class="row">
+				<article class="col-12" id="item-2">
+					<h2>Grid systems</h2>
+					<p>Arb css grid is responsible and it is useful for faster website development. It comes with 12 grid/column and every grid is caled by <span>col-x</span> prefix. </p>
+					<p>Example: For 12 column we call it <span>col-12</span> and for 6 columns we will call <span>col-6</span>. Here are some live columns given below.</p>
+				</article> <!-- End col-12 -->
+			</div> <!-- End .row -->
+			
+			<div class="row">
+			
+				<h3 class="col-12">4 columns grid</h3>
+				
+				<article class="col-4 box">
+					<p>col-4</p>
+				</article> <!-- End .col-4 -->
+				
+				<article class="col-4 box">
+					<p>col-4</p>
+				</article> <!-- End .col-4 -->
+				
+				<article class="col-4 box">
+					<p>col-4</p>
+				</article> <!-- End .col-4 -->
+				
+			</div> <!-- End .row -->
+			
+			<div class="row">
+			
+				<h3 class="col-12">6 columns grid</h3>
+				
+				<article class="col-6 box">
+					<p>col-6</p>
+				</article> <!-- End .col-6 -->
+				
+				<article class="col-6 box">
+					<p>col-6</p>
+				</article> <!-- End .col-6 -->
+				
+			</div> <!-- End .row -->
+		</section> <!-- End .container -->
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>License Info</h2>
+					<p>It'a an open source project so, you can build your next projects with this easily and faster free of cost. Thanks for using arb css grid.</p>
+				</div> <!-- End .col-12 -->
+			</div> <!-- End .row -->
+		</div> <!-- End .container -->
+		
+		<!-- Call jQuery -->
+		<script src="js/jquery.js"></script>
+		
+		<!-- jQuery main script -->
+		<script src="js/arb_min.js"></script>
+	</body>
+</html>
